@@ -7,7 +7,11 @@ characters_on_line = 84
 choice = ''
 
 while choice not in ['y', 'n']:
-    choice = input('Message: ').strip()
+    choice = input(sub(r' +', ' ', '''
+                This script will iterate all .txt files in current directory 
+                and will wrap the text to a new line at the earliest opportunity 
+                after the 84th character. Please press "y" to agree or "n" to decline.
+                '''.strip()).strip())
 
 if choice == 'n':
     sys.exit(0)
